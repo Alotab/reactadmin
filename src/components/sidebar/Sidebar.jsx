@@ -10,13 +10,17 @@ import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSyst
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { Link } from "react-router-dom";
 
 
 export const Sidebar = () => {
   return (
     <div className="sidebar">
         <div className="top">
-            <span className="logo">LamaAdmin</span>
+            <Link to="/" style={{textDecoration: "none"}}>
+                 <span className="logo">LamaAdmin</span>
+            </Link>
+            
         </div>
         <hr />
         <div className="center">
@@ -27,14 +31,18 @@ export const Sidebar = () => {
                     <span>Dashboard</span>
                 </li>
                 <p className="title">LIST</p>
-                <li>
-                    <PersonOutlinedIcon className="icon" />
-                    <span>Users</span>
-                </li>
-                <li>
-                    <ProductionQuantityLimitsOutlinedIcon className="icon" />
-                    <span>Products</span>
-                </li>
+                <Link to="/users" style={{textDecoration: "none"}}>
+                    <li>
+                        <PersonOutlinedIcon className="icon" />
+                        <span>Users</span>
+                    </li>
+                </Link>
+                <Link to="/products" style={{textDecoration: "none"}}>
+                    <li>
+                        <ProductionQuantityLimitsOutlinedIcon className="icon" />
+                        <span>Products</span>
+                    </li>
+                </Link>
                 <p className="title">USEFUL</p>
                 <li>
                     <RedeemOutlinedIcon className="icon" />
